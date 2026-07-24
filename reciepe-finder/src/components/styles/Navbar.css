@@ -52,9 +52,9 @@
 }
 
 .menu-icon{
-    display:none;
-    font-size:2rem;
-    cursor:pointer;
+    display: none !important;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 /* Mobile Responsive */
@@ -66,7 +66,7 @@
 }
 
 .menu-icon{
-    display:block;
+    display: block !important;
 }
 
 .nav-links{
