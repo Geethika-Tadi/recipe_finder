@@ -1,22 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/Navbar.css";
 
 const Navbar = ({ toggleDarkMode, darkMode, onHomeClick }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <h1 className="logo">
         🍽️ Recipe Finder
       </h1>
 
-      <ul className="nav-links">
-        <li><a href="#home" onClick={onHomeClick}>Home</a></li>
-        <li><a href="#recipes">Recipes</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+      <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? "✖" : "☰"}
+      </div>
 
-      <button onClick={toggleDarkMode} className="dark-btn">
-        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-      </button>
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <li>
+          <a
+            href="#home"
+            onClick={() => {
+              onHomeClick();
+              closeMenu();
+            }}
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#recipes"
+            onClick={closeMenu}
+          >
+            Recipes
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#about"
+            onClick={closeMenu}
+          >
+            About
+          </a>
+        </li>
+
+        <li>
+          <button
+            onClick={() => {
+              toggleDarkMode();
+              closeMenu();
+            }}
+            className="dark-btn"
+          >
+            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          </button>
+        </li>
+      </ul>
     </nav>
   );
 };
