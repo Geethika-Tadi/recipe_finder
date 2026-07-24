@@ -9,3 +9,10 @@ body.dark{
   background: #1e1e1e;
   color: #fff;
 }
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+}

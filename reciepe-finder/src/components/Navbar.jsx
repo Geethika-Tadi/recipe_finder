@@ -1,13 +1,24 @@
-import React from 'react'
-import "./styles/Navbar.css"
-const Navbar = ({toggleDarkMode,darkMode,onHomeClick}) => {
+import React from "react";
+import "./styles/Navbar.css";
+
+const Navbar = ({ toggleDarkMode, darkMode, onHomeClick }) => {
   return (
-    <div className='navbar'>
-      <h1 className='logo' onClick={onHomeClick}>Recipe finder</h1>
-      <button onClick={toggleDarkMode} className='dark-btn'>{darkMode ?"Light Mode":"Dark Mode"}</button>
+    <nav className="navbar">
+      <h1 className="logo">
+        🍽️ Recipe Finder
+      </h1>
 
-    </div>
-  )
-}
+      <ul className="nav-links">
+        <li><a href="#home" onClick={onHomeClick}>Home</a></li>
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
 
-export default Navbar
+      <button onClick={toggleDarkMode} className="dark-btn">
+        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      </button>
+    </nav>
+  );
+};
+
+export default Navbar;
