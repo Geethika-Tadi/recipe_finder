@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import RecipeModal from "../components/RecipeModal";
 import SearchBar from "../components/SearchBar";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 const Home = ({ resetHome }) => {
   const [chickenRecipes, setChickenRecipes] = useState([]);
@@ -143,6 +144,7 @@ const Home = ({ resetHome }) => {
             <About />
           </section>
         </>
+      <Footer />
       )}
 
       {selectedRecipe && (
