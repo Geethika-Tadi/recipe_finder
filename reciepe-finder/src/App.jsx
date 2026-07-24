@@ -4,7 +4,6 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
-import About from "./components/About";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,10 +33,6 @@ const App = () => {
 
       <section id="recipes">
         <Home resetHome={resetHome} />
-      </section>
-
-      <section id="about">
-        <About />
       </section>
     </div>
   );
