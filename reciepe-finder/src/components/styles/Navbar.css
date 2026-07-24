@@ -69,74 +69,62 @@
     padding:1rem;
 }
 
-/* Show menu icon */
 .menu-icon{
     display:block;
+    font-size:2rem;
+    cursor:pointer;
     z-index:3001;
 }
 
-/* Hide desktop menu */
 .nav-links{
     display:none;
 }
 
-/* Drawer */
 .nav-links.active{
     display:flex;
     flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
 
     position:fixed;
     top:0;
     left:0;
 
-    width:70%;
+    width:65%;
     height:100vh;
 
     background:#fff;
 
-    padding-top:80px;
+    padding:80px 20px 20px;
 
     box-shadow:4px 0 12px rgba(0,0,0,.25);
 
     z-index:3000;
 
     animation:slideIn .3s ease;
+
+    gap:20px;   /* Equal spacing */
 }
 
-/* Menu Items */
 .nav-links.active li{
     width:100%;
-    padding:18px 25px;
-    text-align:left;
+    text-align:center;
+    margin:0;
+    padding:0;
 }
 
 .nav-links.active a{
     color:#333;
-    font-size:1.15rem;
+    font-size:1.2rem;
+    font-weight:600;
+    display:block;
+    width:100%;
+    padding:10px 0;
 }
 
 .dark-btn{
-    width:80%;
-    margin:20px;
-}
-
-/* Dark mode button inside drawer */
-.nav-links.active .dark-btn{
-    display:block;
-}
-
-}
-
-/* Slide Animation */
-
-@keyframes slideIn{
-
-from{
-    transform:translateX(-100%);
-}
-
-to{
-    transform:translateX(0);
+    width:180px;
+    margin-top:20px;
 }
 
 }
