@@ -2,7 +2,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:1.2rem 1.8rem;
+    padding:1rem 2rem;
     background:linear-gradient(135deg,#ff8a00,#ef2e71);
     color:#fff;
     position:sticky;
@@ -30,7 +30,7 @@
     color:#fff;
     font-size:1.1rem;
     font-weight:600;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .nav-links a:hover{
@@ -41,7 +41,7 @@
     background:#fff;
     color:#e52e71;
     border:none;
-    padding:0.6rem 1.2rem;
+    padding:.6rem 1.2rem;
     border-radius:8px;
     cursor:pointer;
     font-weight:600;
@@ -58,9 +58,9 @@
     cursor:pointer;
 }
 
-/* ========================= */
-/* Mobile Responsive */
-/* ========================= */
+/* ===================== */
+/* Mobile */
+/* ===================== */
 
 @media screen and (max-width:768px){
 
@@ -69,48 +69,74 @@
     padding:1rem;
 }
 
-/* Show hamburger only on mobile */
+/* Show menu icon */
 .menu-icon{
     display:block;
+    z-index:3001;
 }
 
-/* Hide normal menu */
+/* Hide desktop menu */
 .nav-links{
     display:none;
 }
 
-/* Show dropdown menu */
+/* Drawer */
 .nav-links.active{
     display:flex;
     flex-direction:column;
 
-    position:absolute;
-    top:100%;
+    position:fixed;
+    top:0;
     left:0;
 
-    width:100%;
+    width:70%;
+    height:100vh;
+
     background:#fff;
 
-    padding:15px 0;
+    padding-top:80px;
 
-    box-shadow:0 5px 10px rgba(0,0,0,.2);
-    z-index:999;
+    box-shadow:4px 0 12px rgba(0,0,0,.25);
+
+    z-index:3000;
+
+    animation:slideIn .3s ease;
 }
 
-/* Links */
+/* Menu Items */
 .nav-links.active li{
     width:100%;
-    text-align:center;
-    margin:10px 0;
+    padding:18px 25px;
+    text-align:left;
 }
 
 .nav-links.active a{
     color:#333;
+    font-size:1.15rem;
 }
 
-/* Button */
 .dark-btn{
-    width:220px;
-    margin:10px auto;
+    width:80%;
+    margin:20px;
 }
+
+/* Dark mode button inside drawer */
+.nav-links.active .dark-btn{
+    display:block;
+}
+
+}
+
+/* Slide Animation */
+
+@keyframes slideIn{
+
+from{
+    transform:translateX(-100%);
+}
+
+to{
+    transform:translateX(0);
+}
+
 }
