@@ -143,8 +143,9 @@ const Home = ({ resetHome }) => {
           <section id="about">
             <About />
           </section>
+          <Footer />
         </>
-      <Footer />
+      
       )}
 
       {selectedRecipe && (
