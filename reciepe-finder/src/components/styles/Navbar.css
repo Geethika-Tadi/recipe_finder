@@ -51,42 +51,66 @@
     background:#f5f5f5;
 }
 
+/* Hide menu icon on desktop */
 .menu-icon{
-    display: none !important;
-    font-size: 2rem;
-    cursor: pointer;
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
 }
 
+/* ========================= */
 /* Mobile Responsive */
+/* ========================= */
 
-@media (max-width:768px){
+@media screen and (max-width:768px){
 
 .navbar{
-    flex-wrap:wrap;
+    position:relative;
+    padding:1rem;
 }
 
+/* Show hamburger only on mobile */
 .menu-icon{
-    display: block !important;
+    display:block;
 }
 
+/* Hide normal menu */
 .nav-links{
     display:none;
-    flex-direction:column;
-    width:100%;
-    gap:1rem;
-    margin-top:1rem;
-    text-align:center;
 }
 
+/* Show dropdown menu */
 .nav-links.active{
     display:flex;
-}
+    flex-direction:column;
 
-.nav-links li{
+    position:absolute;
+    top:100%;
+    left:0;
+
     width:100%;
+    background:#fff;
+
+    padding:15px 0;
+
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+    z-index:999;
 }
 
+/* Links */
+.nav-links.active li{
+    width:100%;
+    text-align:center;
+    margin:10px 0;
+}
+
+.nav-links.active a{
+    color:#333;
+}
+
+/* Button */
 .dark-btn{
-    width:90%;
+    width:220px;
+    margin:10px auto;
 }
 }
