@@ -4,7 +4,7 @@ const Loader = () => {
   return (
     <div className='loader'>
       <div className='spinner'>
-        <p>Loading Recipes</p>
+        
       </div>
 
     </div>
